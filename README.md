@@ -4,6 +4,21 @@ This is an easy to use plugin that enables you to record and play back a single 
 
 #### [Click here](https://danielstorey.github.io/WebAudioTrack/index.html) for the demo
 
+An audio track can be created like so:
+
+```
+var audioTrack = new WebAudioTrack()
+```
+
+This creates a single track of audio. For more than one track, or source simply construct multiple instances e.g.
+
+```
+var microphoneTrack = new WebAudioTrack();
+var mp3Track = new WebAudioTrack();
+```
+
+You can then use the methods below to record and playback audio.
+
 ## Properties
 
 ### isPlaying
