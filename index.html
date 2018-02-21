@@ -1,0 +1,84 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="apple-mobile-web-capable" content="yes">
+    <title>WebRTC Safari Test</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <script src="https://webrtc.github.io/adapter/adapter-latest.js"></script>
+    <script src="WebAudioTrack.js"></script>
+</head>
+<body>
+
+<div id="container">
+
+    <div id="player">
+
+        <h1>WebAudioTrack plugin</h1>
+        <p><sub>Tested in Chrome, Firefox and Safari 11 (Mac and IOS).</sub></p>
+        <p>This is an easy to use plugin that enables you to record and play back a single track of audio. You can also load audio from a url and concatenate audio from recorded sounds and external audio files into a single audio track.
+        </p>
+        <p>Full documentation and source code can be found on github <a href=""></a></p>
+
+        <br>
+        <button id="btn-start-recording">Start Recording</button>
+        <button id="btn-stop-recording" disabled>Stop Recording</button>
+        <br>
+        <button id="btn-play-recording" disabled>Play Recording</button>
+        <button id="btn-play-file">Play File</button>
+        <button id="btn-play-both" disabled>Play Both</button>
+
+    </div>
+</div>
+
+<script>
+
+    var audioTrack = new WebAudioTrack();
+    var audioTrackFile = new WebAudioTrack();
+
+    var startButton = document.getElementById('btn-start-recording');
+    var stopButton = document.getElementById('btn-stop-recording');
+    var playRecButton = document.getElementById('btn-play-recording');
+    var playFileButton = document.getElementById('btn-play-file');
+    var playBothButton = document.getElementById('btn-play-both');
+
+    startButton.addEventListener("click", function() {
+        audioTrack.startRecording(function() {
+            stopButton.disabled = false;
+            startButton.disabled = true;
+        });
+    });
+
+    stopButton.addEventListener("click", function() {
+        audioTrack.stopRecording(function() {
+            startButton.disabled = false;
+            stopButton.disabled = true;
+            playRecButton.disabled = false;
+            playBothButton.disabled = false;
+        });
+    });
+
+    playRecButton.addEventListener("click", function() {
+        audioTrack.play();
+    });
+
+    playFileButton.addEventListener("click", function() {
+        audioTrackFile.loadUrl("audio-1.m4a")
+            .then(audioTrackFile.play)
+    });
+
+    playBothButton.addEventListener("click", function() {
+        var newTrack = new WebAudioTrack();
+        newTrack.loadUrl("audio-2.m4a")
+            .then(function() {
+                newTrack.appendAudioFromTrack(audioTrack);
+                newTrack.play();
+            })
+    });
+
+
+</script>
+</body>
+</html>

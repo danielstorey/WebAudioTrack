@@ -1,0 +1,52 @@
+body {
+    margin: 0;
+    background: #f0f0f0;
+    font-family:  'Roboto', Helvetica, Arial, sans-serif;
+}
+
+#container {
+    margin-top: 30px;
+}
+
+h1 {
+    margin: 0;
+}
+
+button {
+    width: 120px;
+    margin-bottom: 4px;
+    padding: 10px 0;
+    background: #5c7ab8;
+    border: none;
+    border-radius: 3px;
+    color: #ffffff;
+    font-family: inherit;
+    font-size: 14px;
+    outline: none !important;
+    cursor: pointer;
+}
+
+button[disabled] {
+    background: #aaa !important;
+    cursor: default;
+}
+
+#btn-start-recording {
+    background: #5db85c;
+}
+
+#btn-stop-recording {
+    background: #d95450;
+}
+
+#player {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    background: #ffffff;
+}
+
+audio {
+    width: 100%;
+}
