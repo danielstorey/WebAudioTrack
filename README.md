@@ -2,7 +2,7 @@
 
 This is an easy to use plugin that enables you to record and play back a single track of audio.  You can also load audio from a url and concatenate audio from recorded sounds and external audio files into a single audio track.
 
-#### [Click here](https://danielstorey.github.io/webrtc-audio-recording/) for the demo
+#### [Click here](https://danielstorey.github.io/WebAudioTrack/index.html) for the demo
 
 ## Properties
 
