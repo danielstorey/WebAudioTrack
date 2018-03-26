@@ -66,8 +66,7 @@
     });
 
     playFileButton.addEventListener("click", function() {
-        audioTrackFile.loadUrl("audio-1.m4a")
-            .then(audioTrackFile.play)
+        audioTrackFile.play();
     });
 
     playBothButton.addEventListener("click", function() {
@@ -78,6 +77,8 @@
                 newTrack.play();
             })
     });
+
+    audioTrackFile.loadUrl("audio-1.m4a")
 
 
 </script>
