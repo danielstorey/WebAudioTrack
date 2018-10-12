@@ -215,7 +215,7 @@
         },
 
         getBlobSrc: function() {
-            //return URL.createObjectURL(this.blob);
+            return URL.createObjectURL(this.blob);
         },
 
         _setupProcessor: function() {
