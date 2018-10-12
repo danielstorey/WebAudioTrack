@@ -40,6 +40,7 @@
             self.leftChannel = [];
             self.rightChannel = [];
             self.isRecording = false;
+            self.isPlaying = false;
             self.recordingLength = 0;
             self.isPaused = false;
             self.isAudioProcessStarted = false;
