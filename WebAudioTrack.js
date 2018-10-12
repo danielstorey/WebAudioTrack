@@ -162,9 +162,9 @@
                 leftBuffers: this.leftChannel,
                 rightBuffers: this.numberOfAudioChannels === 1 ? [] : this.rightChannel
             }, function(buffer, view) {
-                //this.blob = new Blob([view], {
-                //    type: 'audio/wav'
-                //});
+                this.blob = new Blob([view], {
+                   type: 'audio/wav'
+                });
 
                 this.audioData = this._decodeAudio(buffer, function() {
                     callback && callback();
