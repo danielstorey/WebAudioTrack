@@ -12,6 +12,10 @@
         }
     }
 
+    var script = document.createElement("script");
+    script.src = "https://webrtchacks.github.io/adapter/adapter-latest.js";
+    document.head.appendChild(script);
+
     var AudioContext = window.AudioContext || window.webkitAudioContext;
 
     if (!window.currentAudioContext) {
