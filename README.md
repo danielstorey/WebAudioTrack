@@ -57,6 +57,10 @@ Stop the recording process. Takes an optional callback parameter.
 
 Returns the length of the recording in seconds
 
+### getBlobSrc(): string
+
+Returns a blob:// URL for the recording
+
 ### setVolume(value: number)
 
 Set the playback volume. Value should be in between 0 and 1.
