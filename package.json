@@ -2,7 +2,7 @@
   "name": "web-audio-track",
   "version": "1.0.1",
   "description": "A simple plugin for recording and playing audio",
-  "main": "AudioRecorder.js",
+  "main": "WebAudioTrack.js",
   "dependencies": {},
   "devDependencies": {
     "browser-sync": "^2.18.13"
