@@ -127,6 +127,7 @@
             if (callback) {
                 this.initCallback = callback;
             }
+            this.context.resume();
 
             this.isCaptureInProgress = true;
 
