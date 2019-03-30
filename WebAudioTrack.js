@@ -156,7 +156,9 @@
             this.jsAudioNode.disconnect();
 
             // stop all MediaStream tracks to make the browser's recording indicator disappear
-            this.microphoneStream.getTracks().forEach(track => { track.stop() });
+            this.microphoneStream.getTracks().forEach(function(track) {
+              track.stop();
+            });
             
             mergeLeftRightBuffers({
                 sampleRate: this.sampleRate,
